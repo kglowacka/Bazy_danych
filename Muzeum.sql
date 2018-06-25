@@ -79,7 +79,7 @@ CREATE TABLE Historia_ekspozycji (
     id_eksponatu int  NOT NULL,
     poczatek date  NOT NULL,
     koniec date  NULL,
-    id_wystawy varchar(80)  NULL,
+    nazwa_wystawy varchar(80)  NULL,
     nr_sali int  NULL,
     id_magazynowania int  NULL,
     CONSTRAINT Historia_ekspozycji_pk PRIMARY KEY (id_wydarzenia)
@@ -88,7 +88,6 @@ CREATE TABLE Historia_ekspozycji (
 -- Table: Magazyn
 CREATE TABLE Magazyn (
     id_magazynowania int  NOT NULL,
-    planowany_koniec date NULL,
     CONSTRAINT Magazyn_pk PRIMARY KEY (id_magazynowania)
 );
 
@@ -108,11 +107,11 @@ CREATE TABLE Sale (
 
 -- Table: Wystawy_objazdowe
 CREATE TABLE Wystawy_objazdowe (
-    id_wystawy varchar(80)  NOT NULL,
+    nazwa_wystawy varchar(80)  NOT NULL,
     nazwa_miasta varchar(40)  NOT NULL,
     data_rozpoczenia timestamp  NOT NULL,
     data_zakonczenia timestamp  NOT NULL,
-    CONSTRAINT Wystawy_objazdowe_pk PRIMARY KEY (id_wystawy)
+    CONSTRAINT Wystawy_objazdowe_pk PRIMARY KEY (nazwa_wystawy)
 );
 
 -- foreign keys
@@ -150,8 +149,8 @@ ALTER TABLE Historia_ekspozycji ADD CONSTRAINT Historia_Sale
 
 -- Reference: Historia_Wystawy_objazdowe (table: Historia_ekspozycji)
 ALTER TABLE Historia_ekspozycji ADD CONSTRAINT Historia_Wystawy_objazdowe
-    FOREIGN KEY (id_wystawy)
-    REFERENCES Wystawy_objazdowe (id_wystawy)
+    FOREIGN KEY (nazwa_wystawy)
+    REFERENCES Wystawy_objazdowe (nazwa_wystawy)
     NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
@@ -314,9 +313,9 @@ DECLARE
 BEGIN
   koniec_roku=to_date('31-12-' || to_char(rok, '9999'), 'dd-mm-yyyy');
   poczatek_roku=to_date('01-01-' || to_char(rok, '9999'), 'dd-mm-yyyy');
-  SELECT SUM(koniec_w_roku(koniec, rok)-poczatek_w_roku(poczatek, rok)) INTO dni_poza
+  SELECT COALESCE(SUM(koniec_w_roku(koniec, rok)-poczatek_w_roku(poczatek, rok)), 0) INTO dni_poza
   FROM historia_ekspozycji
-  WHERE id_eksponatu=id_var AND (id_wypozyczenia IS NOT NULL OR id_wystawy_objazdowej IS NOT NULL) AND
+  WHERE id_eksponatu=id_var AND nazwa_wystawy IS NOT NULL AND
         poczatek <= koniec_roku AND (koniec >=poczatek_roku OR koniec IS NULL);
   RETURN dni_poza+1;
 END;

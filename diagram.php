@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +20,8 @@ include "navbar.php";
         <img src="diagram.png"/>
     </center>
 </div>
-<div class="container-fluid text-center">
-    <div class="row content">
-        <p><br><br><br><br><br><br><br><br></p>
-    </div>
-</div>
 
-
-<footer class="container-fluid text-center">
-    <p>Katarzyna Głowacka - Bazy Danych 2018</p>
-</footer>
+<?php include "footer.php" ?>
 
 </body>
 </html>

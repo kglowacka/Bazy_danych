@@ -3,29 +3,8 @@ session_start();
 ?>
 
 <html>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>Bazy danych - Katarzyna Głowacka</title>
-
-<style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-        margin-bottom: 0;
-        border-radius: 0;
-    }
-
-    /* Set black background color, white text and some padding */
-    footer {
-        background-color: #555;
-        color: white;
-        padding: 15px;
-    }
-
-    }
-</style>
+<head>
+<?php include "head.php" ;?>
 </head>
 <body>
 
@@ -53,7 +32,7 @@ session_start();
         </p>';
 
     } else {
-        $_SESSION['login']=1;
+        $_SESSION["login"] = 1;
         echo '<br><br>
     <p align="center">
         <strong>Logowanie pomyślne! Witamy! </strong>
@@ -65,6 +44,8 @@ session_start();
         }
         pg_close($link);
         ?>
+
+    <?php include "footer.php"; ?>
 
 
 </body>
