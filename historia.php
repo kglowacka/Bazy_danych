@@ -16,12 +16,12 @@ include 'navbar.php';
 ?>
 
 <div class="col-sm-11 text-left">
-    <h1>Eksponaty w galeriach</h1>
+    <h1>Archiwum wydarzeń muzealnych</h1>
     <p align=\"justify\"></p>
 
     <div class="text-center">
         <div class="btn-group">
-            <a class="btn btn-danger btn-lg" href="menu_pracownik.php">Powrót do menu</a>
+            <a class="btn btn-lg" href="menu_pracownik.php">Powrót do menu</a>
         </div>
         <br><br>
 

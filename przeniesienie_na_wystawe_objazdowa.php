@@ -52,10 +52,10 @@ include "database_search_function.php";
         Powyżej nie są wyświetlane eksponaty, które są ostatnim dziełem danego artysty na terenie muzeum, oraz takie,
         które przebywały ponad 30 dni w tym roku poza muzeum.
         <br>
-        <input type="submit" class="btn btn-success" value="Przenieś">
+        <input type="submit" class="btn" value="Przenieś">
     </form>
     <br>
-    <a class="btn btn-danger" href="wystawy_objazdowe.php">Powrót</a>
+    <a class="btn" href="wystawy_objazdowe.php">Powrót</a>
 
 </div>
 <?php include "footer.php"; ?>

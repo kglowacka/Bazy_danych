@@ -78,7 +78,7 @@ if($_POST["koniec_nowego_dziela"]){
 <div class="col-sm-11 text-left">
     <h1>Dodajesz nowy eksponat!</h1>
     <h3 align="center"></h3>
-    <a class="btn btn-danger" href="eksponaty.php">Powrót</a>
+    <a class="btn" href="eksponaty.php">Powrót</a>
 
     <form action="nowy_eksponat.php" method="post">
         <fieldset <?php if ($blokuj_dzielo) echo "disabled"; ?>>
@@ -95,7 +95,7 @@ if($_POST["koniec_nowego_dziela"]){
             <label>Waga:</label><input type="text" name="waga" value="<?php echo $waga; ?>"><br>
             Pamiętaj, by liczby dziesętne oddzielać kropką, nie przecinkiem!
             <br>
-            <input type="submit" name="dzielo_koniec" class="btn btn-success" value="Kolejny krok">
+            <input type="submit" name="dzielo_koniec" class="btn" value="Kolejny krok">
         </fieldset>
     </form>
 
@@ -109,7 +109,7 @@ if($_POST["koniec_nowego_dziela"]){
         <input type="hidden" name="waga" value="<?php echo $waga; ?>">
 
         <fieldset  <?php if ($blokuj_autor) echo "disabled"; ?>>
-            <input type="submit" class="btn btn-danger" name="powrot_do_dziela" value="Poprzedni krok">
+            <input type="submit" class="btn" name="powrot_do_dziela" value="Poprzedni krok">
             <legend>Autor:</legend>
             <input type="radio" name="opcja_autor" value="istniejacy"
                 <?php if($opcja_autor == 'istniejacy') echo 'checked'; ?>> Wybierz z listy:
@@ -134,7 +134,7 @@ if($_POST["koniec_nowego_dziela"]){
                                                 value="<?php echo $rok_urodzenia; ?>">
             <label>Rok śmierci:</label><input type="text" name="rok_smierci"
                                               value="<?php echo $rok_smierci; ?>"><br>
-            <input type="submit" name="autor_koniec" class="btn btn-success" value="Kolejny krok">
+            <input type="submit" name="autor_koniec" class="btn" value="Kolejny krok">
         </fieldset>
     </form>
     <?php } ?>
@@ -156,7 +156,7 @@ if($_POST["koniec_nowego_dziela"]){
             <input type="hidden" name="rok_smierci" value="<?php echo $rok_smierci; ?>">
 
             <fieldset  <?php if ($blokuj_lokalizacja) echo "disabled"; ?>>
-                <input type="submit" class="btn btn-danger" name="powrot_do_autora" value="Poprzedni krok">
+                <input type="submit" class="btn" name="powrot_do_autora" value="Poprzedni krok">
                 <legend>Lokalizacja:</legend>
                 <label>Wybierz lokalizację, w której chcesz umieścić dzieło:</label>
                 <select name="lokalizacja">
@@ -171,7 +171,7 @@ if($_POST["koniec_nowego_dziela"]){
                     echo "Jest to pierwsze dzieło tego autora - nie możesz go umieścić na wystawie objazdowej.";
                 }?>
                 <br>
-                <input type="submit" class="btn btn-success" name="lokalizacja_koniec" value="Kolejny krok">
+                <input type="submit" class="btn" name="lokalizacja_koniec" value="Kolejny krok">
             </fieldset>
         </form>
     <?php } ?>
@@ -194,7 +194,7 @@ if($_POST["koniec_nowego_dziela"]){
             <input type="hidden" name="lokalizacja" value="<?php echo $lokalizacja; ?>">
 
             <fieldset>
-                <input type="submit" class="btn btn-danger" name="powrot_do_lokalizacji" value="Poprzedni krok">
+                <input type="submit" class="btn" name="powrot_do_lokalizacji" value="Poprzedni krok">
                 <legend>Lokalizacja - szczegóły:</legend>
                 <?php if($lokalizacja == 'G'){ ?>
                     <label>Wybierz salę, w której umieścisz dzieło:</label>
@@ -223,7 +223,7 @@ if($_POST["koniec_nowego_dziela"]){
                         ?>
                     </select><br>
                 <?php } ?>
-                <input type="submit" class="btn btn-success" name="koniec_nowego_dziela" value="Zatwierdź">
+                <input type="submit" class="btn" name="koniec_nowego_dziela" value="Zatwierdź">
             </fieldset>
         </form>
     <?php } ?>

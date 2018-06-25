@@ -22,7 +22,6 @@ include "database_search_function.php";
 <div class="col-sm-11 text-left">
     <h1>Tworzysz nową wystawę objazdową</h1>
     <h3 align="center"></h3>
-    <a class="btn btn-danger" href="wystawy_objazdowe.php">Powrót</a>
 
     <form action="stworz_wystawe_objazdowa.php" method="post">
         <label>Nazwa wystawy:</label>
@@ -35,8 +34,10 @@ include "database_search_function.php";
 
         <label>Planowany koniec wystawy:</label>
         <input type="date" name="koniec" class="form-group date"><br>
-        <input type="submit" class="btn btn-success" value="Stwórz tę wystawę">
+        <input type="submit" class="btn" value="Stwórz tę wystawę">
     </form>
+    <br>
+    <a class="btn" href="wystawy_objazdowe.php">Powrót</a>
 </div>
 <?php include "footer.php"; ?>
 

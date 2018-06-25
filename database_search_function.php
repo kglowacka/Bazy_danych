@@ -71,7 +71,8 @@ function wypisz_wszystkie_eksponaty($zapytanie)
 {
     $zapytanie = "SELECT DISTINCT Eksponaty.id_eksponatu, Eksponaty.tytul, Eksponaty.obecna_lokalizacja 
 				FROM eksponaty
-				WHERE LOWER(Eksponaty.tytul) LIKE LOWER('%$zapytanie%')";
+				WHERE LOWER(Eksponaty.tytul) LIKE LOWER('%$zapytanie%')
+				ORDER BY eksponaty.id_eksponatu";
     $nazwy_kolumn = array("ID eksponatu", "Tytuł", "Obecna lokalizacja");
 
     include "config.php";
@@ -172,6 +173,26 @@ function pokaz_dziela_na_wystawach_objazdowych($zapytanie)
     } else {
         $wiersze = pg_fetch_all($wynik);
         normalizuj_autora($wiersze, 3);
+        rysuj_tabele($nazwy_kolumn, $wiersze);
+    }
+}
+
+function pokaz_wszystkie_wystawy_objazdowe(){
+    $zapytanie = "SELECT *
+				FROM wystawy_objazdowe";
+
+    $nazwy_kolumn = array("Nazwa wystawy", "Miasto", "Początek", "Koniec");
+    include "config.php";
+
+    $link = pg_connect("host=$dbhost dbname=$dbname user=$dbuser password=$dbpass");
+    $wynik = pg_query($link, $zapytanie);
+    $ile = pg_numrows($wynik);
+    pg_close($link);
+
+    if ($ile == 0) {
+        echo "<center><strong>Brak!</strong></center>";
+    } else {
+        $wiersze = pg_fetch_all($wynik);
         rysuj_tabele($nazwy_kolumn, $wiersze);
     }
 }

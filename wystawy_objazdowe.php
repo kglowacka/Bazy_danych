@@ -22,13 +22,16 @@ include 'navbar.php';
 
     <div class="text-center">
         <div class="btn-group">
-            <a class="btn btn-success btn-lg" href="przeniesienie_na_wystawe_objazdowa.php">
+            <a class="btn btn-lg" href="przeniesienie_na_wystawe_objazdowa.php">
                 Wyślij eksponat na wystawę objazdową
             </a>
-            <a class="btn btn-success btn-lg" href="nowa_wystawa_objazdowa.php">
+            <a class="btn btn-lg" href="nowa_wystawa_objazdowa.php">
                 Stwórz nową wystawę objazdową
             </a>
-            <a class="btn btn-danger btn-lg" href="menu_pracownik.php">Powrót do menu</a>
+            <a class="btn btn-lg" href="historia_wystawy_objazdowe.php">
+                Archiwalne wystawy objazdowe
+            </a>
+            <a class="btn btn-lg" href="menu_pracownik.php">Powrót do menu</a>
         </div>
         <br><br>
 

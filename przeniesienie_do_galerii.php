@@ -50,10 +50,10 @@ include "database_search_function.php";
         <br>
         Sale, które są w pełni zapełnione nie zostaną wyświetlone!
         <br>
-        <input type="submit" class="btn btn-success" value="Przenieś">
+        <input type="submit" class="btn" value="Przenieś">
     </form>
     <br>
-    <a class="btn btn-danger" href="galerie.php">Powrót</a>
+    <a class="btn" href="galerie.php">Powrót</a>
 
 </div>
 <?php include "footer.php"; ?>

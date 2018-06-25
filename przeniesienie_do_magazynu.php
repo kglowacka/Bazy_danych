@@ -35,10 +35,10 @@ include "database_search_function.php";
             endforeach;
             ?>
         </select>
-        <input type="submit" class="btn btn-success" value="Przenieś">
+        <input type="submit" class="btn" value="Przenieś">
     </form>
     <br>
-    <a class="btn btn-danger" href="magazyn.php">Powrót</a>
+    <a class="btn" href="magazyn.php">Powrót</a>
 
 </div>
 <?php include "footer.php"; ?>

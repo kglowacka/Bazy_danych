@@ -21,8 +21,8 @@ include 'navbar.php';
 
     <div class="text-center">
         <div class="btn-group">
-            <a class="btn btn-success btn-lg" href="przeniesienie_do_magazynu.php">Przenieś eksponat do magazynu</a>
-            <a class="btn btn-danger btn-lg" href="menu_pracownik.php">Powrót do menu</a>
+            <a class="btn btn-lg" href="przeniesienie_do_magazynu.php">Przenieś eksponat do magazynu</a>
+            <a class="btn btn-lg" href="menu_pracownik.php">Powrót do menu</a>
         </div>
         <br><br>
 
